@@ -82,3 +82,8 @@ a, button {
 input, textarea{
   outline: none;
 }
+
+
+.scroll-offset {
+  scroll-margin-top: 90px;
+}

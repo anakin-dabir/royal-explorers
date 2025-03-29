@@ -8,24 +8,31 @@ export default function TravelTour() {
     {
       image: "/images/venezia.jpg",
       alt: "Scenic mountain landscape",
-      title: "Breathtaking Landscapes",
-      description: "Discover the world's most mesmerizing views with our curated travel experiences",
+      tagline: "Find your perfect ADVENTURE",
+      location: "Swiss Alps, Matterhorn, Jungfrau, Zermatt",
+      description: "Discover the world's most mesmerizing views with our curated travel experiences.",
+      buttonText: "LEARN MORE",
     },
     {
       image: "/images/venezia.jpg",
       alt: "Beach sunset",
-      title: "Tropical Paradise",
-      description: "Relax and unwind on pristine beaches with crystal clear waters",
+      tagline: "Escape to PARADISE",
+      location: "Maldives, Bora Bora, Seychelles, Bali",
+      description: "Relax and unwind on pristine beaches with crystal-clear waters.",
+      buttonText: "EXPLORE NOW",
     },
     {
-      image: "/images",
+      image: "/images/venezia.jpg",
       alt: "Forest view",
-      title: "Natural Wonders",
-      description: "Explore the hidden treasures of ancient forests and majestic wildlife",
+      tagline: "Explore the WILDERNESS",
+      location: "Amazon Rainforest, Yosemite, Black Forest, Borneo",
+      description: "Immerse yourself in nature’s untouched beauty and majestic wildlife.",
+      buttonText: "DISCOVER MORE",
     },
   ];
+
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen overflow-x-hidden">
       {/* Hero Slider */}
       <ImageCarousel slides={SLIDES} />
 
@@ -84,12 +91,12 @@ export default function TravelTour() {
         <Image src="/images/venezia.jpg" alt="ad-image" fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-orange-300/50 to-blue-500/50 backdrop-blur-xs">
           <div className="container h-full mx-auto px-4 flex justify-end items-center">
-            <div className="w-1/2 flex flex-col gap-6 text-white">
+            <div className="xl:w-1/2 flex flex-col gap-6 text-white">
               <h2 className="text-5xl font-bold">
                 <span className="text-yellow-300">Discount</span> 10-30% Off
               </h2>
 
-              <p className="text-lg opacity-80">
+              <p className="text-lg">
                 Curabitur blandit tempus porttitor. Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus,
                 nisi erat porttitor ligula, eget lacinia odio sem nec elit.
               </p>

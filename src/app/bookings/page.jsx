@@ -1,7 +1,7 @@
 import PackageCard from "@/components/PackageCard";
 import Image from "next/image";
 
-export default function PackagesPage() {
+export default function BookingsPage() {
   const tours = [
     {
       id: 1,

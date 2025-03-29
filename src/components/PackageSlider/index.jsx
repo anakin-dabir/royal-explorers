@@ -2,9 +2,8 @@
 
 import Image from "next/image";
 import { Star, ChevronLeft, ChevronRight, Clock } from "lucide-react";
-import { useState, useCallback, useEffect } from "react";
-
-// Define the Tour Package type
+import { useState, useCallback, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 
 // Sample tour packages data
 const tourPackages = [
@@ -52,8 +51,15 @@ const tourPackages = [
 ];
 
 const TourPackages = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const router = useRouter();
+  // Initial slide is set to the length of tourPackages to start in the middle set
+  const [currentSlide, setCurrentSlide] = useState(tourPackages.length);
   const [windowWidth, setWindowWidth] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const slideRef = useRef(null);
+
+  // Create a circular array by duplicating the tour packages
+  const extendedPackages = [...tourPackages, ...tourPackages, ...tourPackages];
 
   // Handle responsive sliding
   const getVisibleSlides = useCallback(() => {
@@ -76,17 +82,44 @@ const TourPackages = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Initialize with transitions disabled
+  useEffect(() => {
+    // Enable transitions after component is mounted and positioned
+    setTimeout(() => {
+      setIsTransitioning(true);
+    }, 50);
+  }, []);
+
+  // Handle transition end and reset position if needed
+  const handleTransitionEnd = useCallback(() => {
+    // When we reach the end of the first set
+    if (currentSlide >= tourPackages.length * 2) {
+      setIsTransitioning(false);
+      setCurrentSlide(tourPackages.length);
+    }
+
+    // When we reach the beginning of the last set
+    if (currentSlide < tourPackages.length) {
+      setIsTransitioning(false);
+      setCurrentSlide(tourPackages.length * 2 - 1);
+    }
+  }, [currentSlide, tourPackages.length]);
+
   // Next slide function
   const nextSlide = useCallback(() => {
-    const visibleSlides = getVisibleSlides();
-    setCurrentSlide(prev => (prev + visibleSlides) % tourPackages.length);
-  }, [getVisibleSlides]);
+    if (!isTransitioning) {
+      setIsTransitioning(true);
+    }
+    setCurrentSlide(prev => prev + 1);
+  }, [isTransitioning]);
 
   // Previous slide function
   const prevSlide = useCallback(() => {
-    const visibleSlides = getVisibleSlides();
-    setCurrentSlide(prev => (prev - visibleSlides + tourPackages.length) % tourPackages.length);
-  }, [getVisibleSlides]);
+    if (!isTransitioning) {
+      setIsTransitioning(true);
+    }
+    setCurrentSlide(prev => prev - 1);
+  }, [isTransitioning]);
 
   // Render stars
   const renderStars = rating => {
@@ -95,15 +128,8 @@ const TourPackages = () => {
     ));
   };
 
-  // Determine which slides to show
+  // Calculate slides per view for proper positioning
   const visibleSlides = getVisibleSlides();
-  const slidesToShow = tourPackages.slice(currentSlide, currentSlide + visibleSlides);
-
-  // If we don't have enough slides, wrap around
-  if (slidesToShow.length < visibleSlides) {
-    const remainingSlides = tourPackages.slice(0, visibleSlides - slidesToShow.length);
-    slidesToShow.push(...remainingSlides);
-  }
 
   return (
     <div className="relative w-full overflow-hidden bg-gradient-to-b from-gray-900/70 to-gray-900/40 lg:min-w-[1024px]">
@@ -127,50 +153,68 @@ const TourPackages = () => {
             <ChevronLeft className="h-6 w-6" />
           </button>
 
-          {/* Tour Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {slidesToShow.map(tour => (
-              <div
-                key={tour.id}
-                className="bg-white rounded-xs overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-              >
-                {/* Image */}
-                <div className="relative">
-                  <Image src={tour.image} alt={tour.title} width={500} height={300} className="w-full h-48 object-cover" />
-                  {tour.discount && (
-                    <div className="absolute top-0 right-0 bg-yellow-500 text-white px-2 py-1 text-xs font-bold m-2 rounded">{tour.discount}% Off</div>
-                  )}
-                </div>
-
-                {/* Tour Details */}
-                <div className="p-5">
-                  <h3 className="text-lg font-bold text-gray-800 uppercase">{tour.title}</h3>
-
-                  {/* Duration */}
-                  <div className="flex items-center mt-3 text-gray-500">
-                    <Clock className="h-4 w-4 mr-1" />
-                    <span className="text-sm">{tour.duration}</span>
-                  </div>
-
-                  {/* Rating */}
-                  <div className="flex items-center mt-2">
-                    <div className="flex">{renderStars(tour.rating)}</div>
-                    <span className="text-xs text-gray-500 ml-1">({tour.reviews} Reviews)</span>
-                  </div>
-
-                  {/* Price and Book Button */}
-                  <div className="mt-4 flex justify-between items-center">
-                    <div>
-                      <span className="text-xs text-gray-500">From</span>
-                      <p className="text-xl font-bold text-blue-600">${tour.price.toLocaleString()}</p>
+          {/* Tour Cards Container with Transition */}
+          <div className="overflow-hidden">
+            <div
+              ref={slideRef}
+              className="flex"
+              onTransitionEnd={handleTransitionEnd}
+              style={{
+                transform: `translateX(-${currentSlide * (100 / visibleSlides)}%)`,
+                transition: isTransitioning ? "transform 300ms ease-in-out" : "none",
+              }}
+            >
+              {extendedPackages.map((tour, index) => (
+                <div
+                  key={`${tour.id}-${index}`}
+                  className="overflow-hidden transform transition-all duration-300 hover:-translate-y-1 flex-shrink-0"
+                  style={{ width: `${100 / visibleSlides}%`, padding: "0 0.75rem" }}
+                >
+                  <div className="flex flex-col shadow-lg bg-white flex-1 h-full hover:shadow-2xl">
+                    {/* Image */}
+                    <div className="relative">
+                      <div className="relative w-full h-48">
+                        <Image src={tour.image} alt={tour.title} fill className="object-cover" />
+                      </div>
+                      {tour.discount && (
+                        <div className="absolute top-0 right-0 bg-yellow-500 text-white px-2 py-1 text-xs font-bold m-2 rounded">{tour.discount}% Off</div>
+                      )}
                     </div>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300">
-                      Book Now
-                    </button>
+
+                    {/* Tour Details */}
+                    <div className="p-5">
+                      <h3 className="text-lg font-bold text-gray-800 uppercase">{tour.title}</h3>
+
+                      {/* Duration */}
+                      <div className="flex items-center mt-3 text-gray-500">
+                        <Clock className="h-4 w-4 mr-1" />
+                        <span className="text-sm">{tour.duration}</span>
+                      </div>
+
+                      {/* Rating */}
+                      <div className="flex items-center mt-2">
+                        <div className="flex">{renderStars(tour.rating)}</div>
+                        <span className="text-xs text-gray-500 ml-1">({tour.reviews} Reviews)</span>
+                      </div>
+
+                      {/* Price and Book Button */}
+                      <div className="mt-4 flex justify-between items-center">
+                        <div>
+                          <span className="text-xs text-gray-500">From</span>
+                          <p className="text-xl font-bold text-blue-600">${tour.price.toLocaleString()}</p>
+                        </div>
+                        <button
+                          onClick={() => router.push(`/detail/1`)}
+                          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300"
+                        >
+                          Book Now
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* Next Slide Button */}

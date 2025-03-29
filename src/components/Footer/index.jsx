@@ -5,7 +5,7 @@ import { Facebook, Twitter, Linkedin } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="bg-footer text-white">
-      <div className="container mx-auto max-w-7xl px-4 py-10 flex items-start justify-between gap-8">
+      <div className="container mx-auto max-w-7xl px-4 py-10 flex flex-col md:flex-row items-start justify-between gap-8">
         {/* Left Section */}
         <div>
           <h2 className="text-xl font-semibold text-white flex items-center gap-2 uppercase">
