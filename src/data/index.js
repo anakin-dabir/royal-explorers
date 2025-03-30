@@ -1,7 +1,7 @@
 export const data = {
   NAVBAR: {
-    EMAIL: "anakindabir@gmail.com",
-    PHONE: "(+92) 3094998057",
+    EMAIL: "ladakh60@gmail.com",
+    PHONE: ["9622966260", "9419178496"],
   },
   CATEGORIES: {
     BIKING: "Biking",

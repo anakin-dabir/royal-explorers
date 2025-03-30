@@ -1,0 +1,28 @@
+[
+  {
+    "image": "/images/banner-1.jpg",
+    "alt": "Scenic mountain landscape",
+    "heading": "Special",
+    "subHeading": "7 Days in Leh Ladakh",
+    "description": "Ride the Himalayas - Conquer Ladakh, Embrace the Adventure",
+    "buttonText": "LEARN MORE",
+    "link": "/packages"
+  },
+  {
+    "image": "/images/banner-2.jpg",
+    "alt": "Scenic mountain landscape",
+    "preHeading": "Open Your Eyes to",
+    "heading": "The Paradise of Heaven",
+    "buttonText": "LEARN MORE",
+    "link": "/packages"
+  },
+  {
+    "image": "/images/banner-3.jpg",
+    "alt": "Scenic mountain landscape",
+    "subHeading": "Find your perfect",
+    "postHeading": "Vacation",
+    "description": "Leh, Ladakh,Jammu & Kashmir",
+    "buttonText": "LEARN MORE",
+    "link": "/packages"
+  }
+]

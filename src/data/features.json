@@ -1,0 +1,22 @@
+[
+  {
+    "title": "500+ Breathtaking Destinations",
+    "description": "Explore the world's most stunning landscapes, from serene valleys to majestic mountains.",
+    "icon": "/icons/destination.png"
+  },
+  {
+    "title": "Best Price Guarantee",
+    "description": "Unbeatable prices on incredible travel experiences – adventure without overspending.",
+    "icon": "/icons/price.png"
+  },
+  {
+    "title": "Exceptional Customer Service",
+    "description": "Our travel experts are here 24/7 to assist you every step of the way.",
+    "icon": "/icons/customer.png"
+  },
+  {
+    "title": "Super Fast Booking",
+    "description": "Seamless and hassle-free reservations – your dream trip is just a click away!",
+    "icon": "/icons/booking.png"
+  }
+]

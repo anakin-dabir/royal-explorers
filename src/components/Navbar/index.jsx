@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { data } from "@/data";
 
 const links = [
   { name: "Home", path: "/" },
@@ -17,7 +18,7 @@ const links = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const activeLink = useCallback(value => pathname === value, [pathname]);
+  const activeLink = useCallback((value) => pathname === value, [pathname]);
   const [isOpen, isOpenSet] = useState(false);
 
   return (
@@ -25,13 +26,17 @@ export default function Navbar() {
       <div className="container mx-auto max-w-7xl px-4 flex flex-col gap-8">
         <div className="hidden xl:flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center gap-6">
-            <div className="flex items-center">
-              <Phone className="h-4 w-4 mr-2" />
-              <span className="text-sm">1.820.3345.33</span>
-            </div>
+            {data.NAVBAR.PHONE.map((phone, index) => {
+              return (
+                <div key={index} className="flex items-center">
+                  <Phone className="h-4 w-4 mr-2" />
+                  <span className="text-sm">{phone}</span>
+                </div>
+              );
+            })}
             <div className="flex items-center">
               <Mail className="h-4 w-4 mr-2" />
-              <span className="text-sm">Contact@TravelTourWP.com</span>
+              <span className="text-sm">{data.NAVBAR.EMAIL}</span>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -65,7 +70,7 @@ export default function Navbar() {
             })}
           </nav>
 
-          <button onClick={() => isOpenSet(pre => !pre)} className="flex xl:hidden">
+          <button onClick={() => isOpenSet((pre) => !pre)} className="flex xl:hidden">
             <Menu size={30} />
           </button>
 
@@ -80,7 +85,7 @@ function CollapsibleNavbar({ isOpen, isOpenSet, activeLink }) {
   const router = useRouter();
   function navigate(e, path) {
     e.preventDefault();
-    isOpenSet(pre => !pre);
+    isOpenSet((pre) => !pre);
     router.push(path);
   }
   return (
@@ -102,7 +107,7 @@ function CollapsibleNavbar({ isOpen, isOpenSet, activeLink }) {
               return (
                 <Link
                   href="#"
-                  onClick={e => navigate(e, link.path)}
+                  onClick={(e) => navigate(e, link.path)}
                   key={index}
                   className={`${active ? "border-b-2 border-blue-500" : "hover:text-blue-500 transition-colors"}`}
                 >
