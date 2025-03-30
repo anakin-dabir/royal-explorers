@@ -114,7 +114,7 @@ const TourPackages = () => {
               {extendedPackages.map((tour, index) => (
                 <div
                   key={`${tour.id}-${index}`}
-                  className="overflow-hidden transform transition-all duration-300 hover:-translate-y-1 flex-shrink-0"
+                  className="overflow-hidden transform transition-all duration-300 hover:-translate-y-1 flex-shrink-0 relative"
                   style={{
                     width: `${100 / visibleSlides}%`,
                     padding: "0 0.75rem",
@@ -122,7 +122,7 @@ const TourPackages = () => {
                 >
                   <div className="flex flex-col shadow-lg bg-white flex-1 h-full hover:shadow-2xl">
                     {/* Image */}
-                    <div className="relative">
+                    <div>
                       <div className="relative w-full h-48">
                         <Image
                           src={tour?.image ?? "/images/venezia.jpg"}
@@ -131,11 +131,11 @@ const TourPackages = () => {
                           className="object-cover"
                         />
                       </div>
-                      {tour?.discount && (
-                        <div className="absolute top-0 right-0 bg-yellow-500 text-white px-2 py-1 text-xs font-bold m-2 rounded">
-                          {tour.discount}% Off
-                        </div>
-                      )}
+                      {/* {tour?.discount && ( */}
+                      <div className="absolute top-4 left-0 bg-orange-500 text-white px-5 py-2 text-xs font-bold m-2">
+                        {20}% Off
+                      </div>
+                      {/* )} */}
                     </div>
 
                     {/* Tour Details */}

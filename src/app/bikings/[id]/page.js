@@ -338,7 +338,7 @@ export default async function PackagesPage({ params }) {
                           {it.title}
                         </a>
                       </p>
-                      <p className="text-gray-600">
+                      <div className="text-gray-600">
                         <ul className="text-gray-600">
                           {it.activities.map((activity, j) => {
                             return (
@@ -352,7 +352,7 @@ export default async function PackagesPage({ params }) {
                             );
                           })}
                         </ul>
-                      </p>
+                      </div>
                     </div>
                   );
                 })}
