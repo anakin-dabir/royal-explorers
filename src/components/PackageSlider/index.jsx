@@ -30,6 +30,9 @@ const TourPackages = () => {
       "(min-width: 1000px)": {
         slides: { perView: 3, spacing: 10 },
       },
+      "(min-width: 0px)": {
+        slides: { perView: 1, spacing: 5 },
+      },
     },
     slides: { perView: 1 },
     slideChanged(slider) {
