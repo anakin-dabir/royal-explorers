@@ -5,7 +5,7 @@ import { Star, ChevronLeft, ChevronRight, Clock, ArrowLeft, ArrowRight } from "l
 import { useState, useCallback, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import tourPackages from "@/data/tours.json";
-import { getPackagePrice } from "@/app/utils/getPackagePrice";
+import { getPackagePrice } from "@/utils/getPackagePrice";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 
