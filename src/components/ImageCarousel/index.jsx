@@ -8,14 +8,14 @@ export default function ImageCarousel({ slides }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = useCallback(() => {
-    setCurrentSlide(prev => (prev + 1) % slides.length);
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
   }, []);
 
   const prevSlide = useCallback(() => {
-    setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   }, []);
 
-  const goToSlide = useCallback(index => {
+  const goToSlide = useCallback((index) => {
     setCurrentSlide(index);
   }, []);
 
@@ -25,12 +25,12 @@ export default function ImageCarousel({ slides }) {
       <div className="flex size-full transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
         {slides.map((slide, index) => (
           <div key={index} className="size-full flex shrink-0 relative">
-            <Image src={slide.image} alt={slide.alt} fill priority={index === 0} className="object-cover" />
+            <Image src={slide?.image} alt={slide?.alt} fill priority={index === 0} className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/50 to-transparent text-white">
               <div className="flex mt-6 flex-col h-full justify-center items-center text-center xl:items-start xl:text-start container mx-auto max-w-7xl p-4 gap-6">
-                <div className={`text-lg max-w-2xl`}>{slide.description}</div>
-                <div className={`text-5xl font-bold`}>{slide.tagline}</div>
-                <div className={`text-lg max-w-2xl`}>{slide.location}</div>
+                <div className={`text-5xl md:text-8xl font-extrabold max-w-2xl`}>{slide?.heading}</div>
+                <div className={`text-3xl md:text-5xl font-bold text-blue-300`}>{slide?.subHeading}</div>
+                <div className={`text-lg md:text-xl max-w-2xl`}>{slide?.description}</div>
                 <button className={`text-white uppercase font-sm font-semibold py-4 px-6 w-fit rounded-sm bg-blue-500 hover:bg-blue-600 transition-colors`}>
                   Learn More
                 </button>

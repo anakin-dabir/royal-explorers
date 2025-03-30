@@ -12,29 +12,29 @@ export default function TravelTour() {
     {
       image: "/images/venezia.jpg",
       alt: "Scenic mountain landscape",
-      tagline: "Find your perfect ADVENTURE",
+      heading: "Special",
+      subHeading: "7 Days in Leh Ladakh",
+      description: "Ride the Himalayas - Conquer Ladakh, Embrace the Adventure",
       location: "Swiss Alps, Matterhorn, Jungfrau, Zermatt",
-      description:
-        "Discover the world's most mesmerizing views with our curated travel experiences.",
       buttonText: "LEARN MORE",
     },
     {
       image: "/images/venezia.jpg",
-      alt: "Beach sunset",
-      tagline: "Escape to PARADISE",
-      location: "Maldives, Bora Bora, Seychelles, Bali",
-      description:
-        "Relax and unwind on pristine beaches with crystal-clear waters.",
-      buttonText: "EXPLORE NOW",
+      alt: "Scenic mountain landscape",
+      heading: "Special",
+      subHeading: "7 Days in Leh Ladakh",
+      description: "Ride the Himalayas - Conquer Ladakh, Embrace the Adventure",
+      location: "Swiss Alps, Matterhorn, Jungfrau, Zermatt",
+      buttonText: "LEARN MORE",
     },
     {
       image: "/images/venezia.jpg",
-      alt: "Forest view",
-      tagline: "Explore the WILDERNESS",
-      location: "Amazon Rainforest, Yosemite, Black Forest, Borneo",
-      description:
-        "Immerse yourself in nature’s untouched beauty and majestic wildlife.",
-      buttonText: "DISCOVER MORE",
+      alt: "Scenic mountain landscape",
+      heading: "Special",
+      subHeading: "7 Days in Leh Ladakh",
+      description: "Ride the Himalayas - Conquer Ladakh, Embrace the Adventure",
+      location: "Swiss Alps, Matterhorn, Jungfrau, Zermatt",
+      buttonText: "LEARN MORE",
     },
   ];
 
