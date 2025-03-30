@@ -32,7 +32,7 @@ const TourPackages = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsTransitioning(true);
-    }, 50);
+    }, 10);
   }, []);
 
   const handleTransitionEnd = useCallback(() => {
@@ -51,19 +51,22 @@ const TourPackages = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
     }
-    setCurrentSlide(prev => prev + 1);
+    setCurrentSlide((prev) => prev + 1);
   }, [isTransitioning]);
 
   const prevSlide = useCallback(() => {
     if (!isTransitioning) {
       setIsTransitioning(true);
     }
-    setCurrentSlide(prev => prev - 1);
+    setCurrentSlide((prev) => prev - 1);
   }, [isTransitioning]);
 
-  const renderStars = rating => {
+  const renderStars = (rating) => {
     return Array.from({ length: 5 }, (_, index) => (
-      <Star key={index} className={`w-4 h-4 ${index < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`} />
+      <Star
+        key={index}
+        className={`w-4 h-4 ${index < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`}
+      />
     ));
   };
 
@@ -74,8 +77,13 @@ const TourPackages = () => {
       <div className="relative mx-auto max-w-7xl px-4 py-12">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl font-bold text-white">Popular Tour Packages</h2>
-          <a href="/tours" className="text-sm text-white/80 hover:text-white transition-colors duration-300 flex items-center">
+          <h2 className="text-2xl font-bold text-white">
+            Popular Tour Packages
+          </h2>
+          <a
+            href="/tours"
+            className="text-sm text-white/80 hover:text-white transition-colors duration-300 flex items-center"
+          >
             View All Tours
             <ChevronRight className="h-4 w-4 ml-1" />
           </a>
@@ -98,29 +106,43 @@ const TourPackages = () => {
               onTransitionEnd={handleTransitionEnd}
               style={{
                 transform: `translateX(-${currentSlide * (100 / visibleSlides)}%)`,
-                transition: isTransitioning ? "transform 300ms ease-in-out" : "none",
+                transition: isTransitioning
+                  ? "transform 300ms ease-in-out"
+                  : "none",
               }}
             >
               {extendedPackages.map((tour, index) => (
                 <div
                   key={`${tour.id}-${index}`}
                   className="overflow-hidden transform transition-all duration-300 hover:-translate-y-1 flex-shrink-0"
-                  style={{ width: `${100 / visibleSlides}%`, padding: "0 0.75rem" }}
+                  style={{
+                    width: `${100 / visibleSlides}%`,
+                    padding: "0 0.75rem",
+                  }}
                 >
                   <div className="flex flex-col shadow-lg bg-white flex-1 h-full hover:shadow-2xl">
                     {/* Image */}
                     <div className="relative">
                       <div className="relative w-full h-48">
-                        <Image src={tour?.image ?? "/images/venezia.jpg"} alt={tour?.name} fill className="object-cover" />
+                        <Image
+                          src={tour?.image ?? "/images/venezia.jpg"}
+                          alt={tour?.name}
+                          fill
+                          className="object-cover"
+                        />
                       </div>
                       {tour?.discount && (
-                        <div className="absolute top-0 right-0 bg-yellow-500 text-white px-2 py-1 text-xs font-bold m-2 rounded">{tour.discount}% Off</div>
+                        <div className="absolute top-0 right-0 bg-yellow-500 text-white px-2 py-1 text-xs font-bold m-2 rounded">
+                          {tour.discount}% Off
+                        </div>
                       )}
                     </div>
 
                     {/* Tour Details */}
                     <div className="p-5">
-                      <h3 className="text-lg font-bold text-gray-800 uppercase">{tour?.name}</h3>
+                      <h3 className="text-lg font-bold text-gray-800 uppercase">
+                        {tour?.name}
+                      </h3>
 
                       {/* Duration */}
                       <div className="flex items-center mt-3 text-gray-500">
@@ -131,17 +153,23 @@ const TourPackages = () => {
                       {/* Rating */}
                       <div className="flex items-center mt-2">
                         <div className="flex">{renderStars(tour?.rating)}</div>
-                        <span className="text-xs text-gray-500 ml-1">({tour?.reviews} Reviews)</span>
+                        <span className="text-xs text-gray-500 ml-1">
+                          ({tour?.reviews} Reviews)
+                        </span>
                       </div>
 
                       {/* Price and Book Button */}
                       <div className="mt-4 flex justify-between items-center">
                         <div>
                           <span className="text-xs text-gray-500">From</span>
-                          <p className="text-xl font-bold text-blue-600">{getPackagePrice(tour)}</p>
+                          <p className="text-xl font-bold text-blue-600">
+                            {getPackagePrice(tour)}
+                          </p>
                         </div>
                         <button
-                          onClick={() => router.push(`${tour?.link}/${tour?.slug}`)}
+                          onClick={() =>
+                            router.push(`${tour?.link}/${tour?.slug}`)
+                          }
                           className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300"
                         >
                           Book Now
