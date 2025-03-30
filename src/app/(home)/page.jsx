@@ -22,9 +22,8 @@ export default function TravelTour() {
     {
       image: "/images/venezia.jpg",
       alt: "Scenic mountain landscape",
-      heading: "Special",
-      subHeading: "7 Days in Leh Ladakh",
-      description: "Ride the Himalayas - Conquer Ladakh, Embrace the Adventure",
+      preHeading: "Open Your Eyes to",
+      heading: "The Paradise of Heaven",
       location: "Swiss Alps, Matterhorn, Jungfrau, Zermatt",
       buttonText: "LEARN MORE",
       link: "/packages",

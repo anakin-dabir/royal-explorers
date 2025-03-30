@@ -30,6 +30,7 @@ export default function ImageCarousel({ slides }) {
             <Image src={slide?.image} alt={slide?.alt} fill priority={index === 0} className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/50 to-transparent text-white">
               <div className="flex mt-6 flex-col h-full justify-center items-center text-center xl:items-start xl:text-start container mx-auto max-w-7xl p-4 gap-6">
+                <div className={`text-xl md:text-3xl max-w-2xl uppercase`}>{slide?.preHeading}</div>
                 <div className={`text-5xl md:text-8xl font-extrabold max-w-2xl`}>{slide?.heading}</div>
                 <div className={`text-3xl md:text-5xl font-bold text-blue-300`}>{slide?.subHeading}</div>
                 <div className={`text-lg md:text-xl max-w-2xl`}>{slide?.description}</div>
