@@ -11,7 +11,7 @@ const links = [
   { name: "About Us", path: "/about" },
   { name: "Tour & Travel Packages", path: "/packages" },
   { name: "Trackings", path: "/trackings" },
-  { name: "Boking & Cycling", path: "/bookings" },
+  { name: "Biking & Cycling", path: "/bikings" },
   { name: "Contact Us", path: "/contact" },
 ];
 
