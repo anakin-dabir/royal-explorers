@@ -17,6 +17,7 @@ export default function TravelTour() {
       description: "Ride the Himalayas - Conquer Ladakh, Embrace the Adventure",
       location: "Swiss Alps, Matterhorn, Jungfrau, Zermatt",
       buttonText: "LEARN MORE",
+      link: "/packages",
     },
     {
       image: "/images/venezia.jpg",
@@ -26,6 +27,7 @@ export default function TravelTour() {
       description: "Ride the Himalayas - Conquer Ladakh, Embrace the Adventure",
       location: "Swiss Alps, Matterhorn, Jungfrau, Zermatt",
       buttonText: "LEARN MORE",
+      link: "/packages",
     },
     {
       image: "/images/venezia.jpg",
@@ -35,6 +37,7 @@ export default function TravelTour() {
       description: "Ride the Himalayas - Conquer Ladakh, Embrace the Adventure",
       location: "Swiss Alps, Matterhorn, Jungfrau, Zermatt",
       buttonText: "LEARN MORE",
+      link: "/packages",
     },
   ];
 

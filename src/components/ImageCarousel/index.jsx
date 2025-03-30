@@ -3,9 +3,11 @@
 import React, { useState, useCallback } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function ImageCarousel({ slides }) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const router = useRouter();
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -31,7 +33,10 @@ export default function ImageCarousel({ slides }) {
                 <div className={`text-5xl md:text-8xl font-extrabold max-w-2xl`}>{slide?.heading}</div>
                 <div className={`text-3xl md:text-5xl font-bold text-blue-300`}>{slide?.subHeading}</div>
                 <div className={`text-lg md:text-xl max-w-2xl`}>{slide?.description}</div>
-                <button className={`text-white uppercase font-sm font-semibold py-4 px-6 w-fit rounded-sm bg-blue-500 hover:bg-blue-600 transition-colors`}>
+                <button
+                  onClick={() => router.push(slide?.link)}
+                  className={`text-white uppercase font-sm font-semibold py-4 px-6 w-fit rounded-sm bg-blue-500 hover:bg-blue-600 transition-colors`}
+                >
                   Learn More
                 </button>
               </div>
