@@ -83,7 +83,7 @@ const PopularDestinations = () => {
                 <span>{destination.tours} tours</span>
                 <Link
                   href="/tours"
-                  className="bg-blue-600 text-xs px-2 py-1 rounded uppercase opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="bg-blue-600 text-xs px-2 py-1 rounded uppercase lg:group-hover:opacity-100 lg:opacity-0  transition-opacity"
                 >
                   View all tours
                 </Link>

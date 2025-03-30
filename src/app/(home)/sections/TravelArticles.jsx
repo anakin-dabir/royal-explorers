@@ -55,7 +55,7 @@ const TravelArticles = () => {
               />
 
               <div
-                className="group-hover:opacity-100 opacity-0 transition-opacity absolute inset-0 bg-gradient-to-t from-black/70
+                className="lg:group-hover:opacity-100 lg:opacity-0 transition-opacity absolute inset-0 bg-gradient-to-t from-black/70
                 to-transparent flex flex-col justify-end p-4 gap-4"
               >
                 <h3 className="text-white font-medium text-lg leading-tight">
