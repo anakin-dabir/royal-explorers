@@ -50,7 +50,9 @@ const TourPackages = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden bg-gradient-to-b from-gray-900/70 to-gray-900/40 lg:min-w-[1024px] px-4">
+    <div className="relative w-full overflow-hidden px-4">
+      <Image src="/images/venezia.jpg" fill alt="Bg-slider-image" />
+      <div className="absolute inset-0 bg-black/60" />
       <div className="relative container mx-auto max-w-7xl py-12 px-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
