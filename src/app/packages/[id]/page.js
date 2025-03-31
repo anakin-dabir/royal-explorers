@@ -1,37 +1,18 @@
 import StickyScrollBar from "@/components/StickyTopBar";
-import {
-  Star,
-  Clock,
-  Calendar,
-  MapPin,
-  Users,
-  User,
-  Check,
-  X,
-  Camera,
-  Tag,
-  Heart,
-  Utensils,
-  Bed,
-  Dot,
-} from "lucide-react";
+import { Star, Clock, Calendar, MapPin, Users, User, Check, X, Camera, Tag, Heart, Utensils, Bed, Dot } from "lucide-react";
 import Image from "next/image";
 import data from "@/data/tours.json";
 import React from "react";
+import Slider from "@/components/Slider";
 
 export default async function PackagesPage({ params }) {
   const { id } = await params;
-  const tour = data.find((data) => data.slug === id);
+  const tour = data.find(data => data.slug === id);
 
   return (
     <div className="flex flex-col min-h-screen">
       <section className="w-full h-[400px] flex relative overflow-hidden">
-        <Image
-          src="/images/venezia.jpg"
-          alt="about-us-image"
-          fill
-          className="object-cover"
-        />
+        <Image src="/images/venezia.jpg" alt="about-us-image" fill className="object-cover" />
         <div className="absolute bottom-0 left-0 right-0 h-full bg-black/60 text-white">
           <div className="flex mt-[114] flex-col h-full justify-center container mx-auto max-w-7xl p-4 gap-3">
             <div className="text-5xl font-bold">{tour?.name}</div>
@@ -88,74 +69,51 @@ export default async function PackagesPage({ params }) {
             <div className="flex flex-col gap-2">
               <p className="font-semibold">Package Cost</p>
               <ul className="text-gray-600 flex flex-col gap-5">
-                {Object.entries(tour?.packageCost || {}).map(
-                  ([key, value], index) => {
-                    return (
-                      <React.Fragment key={index}>
-                        <li className="flex flex-col gap-2">
-                          <div className="flex items-center gap-2">
-                            <span className="text-blue-600">●</span>
-                            <span className="uppercase font-bold text-sm">
-                              {key}
-                            </span>
-                          </div>
-                          <ul className="flex flex-col gap-2">
-                            {Object.entries(value).map(
-                              ([subKey, subValue], j) => {
-                                return (
-                                  <li
-                                    key={j}
-                                    className="flex flex-col gap-2 ml-4"
-                                  >
-                                    {subKey === "hotels" ? (
-                                      <>
-                                        <div className="flex items-center gap-2">
-                                          <span className="text-blue-600">
-                                            -
-                                          </span>
-                                          <span className="text-sm">
-                                            Hotels Included{" "}
-                                          </span>
-                                        </div>
-                                        <div className="flex flex-col gap-2 ml-8">
-                                          {Object.entries(subValue).map(
-                                            ([location, hotels], k) => {
-                                              return (
-                                                <div
-                                                  key={k}
-                                                  className="flex items-center gap-2 text-sm "
-                                                >
-                                                  <span className="font-bold">
-                                                    {location}:{" "}
-                                                  </span>
-                                                  <span>{hotels}</span>
-                                                </div>
-                                              );
-                                            },
-                                          )}
-                                        </div>
-                                      </>
-                                    ) : (
-                                      <div className="flex items-center gap-2">
-                                        <span className="text-blue-600">-</span>
-                                        <span className="text-sm">
-                                          {subKey}:{" "}
-                                          <span className="text-blue-600">
-                                            ₹ {subValue}
-                                          </span>
-                                        </span>
-                                      </div>
-                                    )}
-                                  </li>
-                                );
-                              },
-                            )}
-                          </ul>
-                        </li>
-                      </React.Fragment>
-                    );
-                  },
-                )}
+                {Object.entries(tour?.packageCost || {}).map(([key, value], index) => {
+                  return (
+                    <React.Fragment key={index}>
+                      <li className="flex flex-col gap-2">
+                        <div className="flex items-center gap-2">
+                          <span className="text-blue-600">●</span>
+                          <span className="uppercase font-bold text-sm">{key}</span>
+                        </div>
+                        <ul className="flex flex-col gap-2">
+                          {Object.entries(value).map(([subKey, subValue], j) => {
+                            return (
+                              <li key={j} className="flex flex-col gap-2 ml-4">
+                                {subKey === "hotels" ? (
+                                  <>
+                                    <div className="flex items-center gap-2">
+                                      <span className="text-blue-600">-</span>
+                                      <span className="text-sm">Hotels Included </span>
+                                    </div>
+                                    <div className="flex flex-col gap-2 ml-8">
+                                      {Object.entries(subValue).map(([location, hotels], k) => {
+                                        return (
+                                          <div key={k} className="flex items-center gap-2 text-sm ">
+                                            <span className="font-bold">{location}: </span>
+                                            <span>{hotels}</span>
+                                          </div>
+                                        );
+                                      })}
+                                    </div>
+                                  </>
+                                ) : (
+                                  <div className="flex items-center gap-2">
+                                    <span className="text-blue-600">-</span>
+                                    <span className="text-sm">
+                                      {subKey}: <span className="text-blue-600">₹ {subValue}</span>
+                                    </span>
+                                  </div>
+                                )}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </li>
+                    </React.Fragment>
+                  );
+                })}
               </ul>
             </div>
 
@@ -248,10 +206,7 @@ export default async function PackagesPage({ params }) {
                         <ul className="text-gray-600">
                           {it.activities.map((activity, j) => {
                             return (
-                              <li
-                                key={j}
-                                className="flex items-start space-x-2"
-                              >
+                              <li key={j} className="flex items-start space-x-2">
                                 <span className="text-blue-600">●</span>
                                 <span>{activity}</span>
                               </li>
@@ -273,12 +228,8 @@ export default async function PackagesPage({ params }) {
                 <Camera className="w-6 h-6 text-blue-600" />
                 <span>Photos</span>
               </h2>
-              <div className="">
-                <img
-                  src="/images/venezia.jpg"
-                  alt="Tour Highlights"
-                  className="w-full"
-                />
+              <div className="h-96">
+                <Slider images={tour?.images} />
               </div>
             </div>
 
@@ -295,9 +246,7 @@ export default async function PackagesPage({ params }) {
                   <div className="flex flex-col gap-2">
                     <p className="font-semibold">Phil The Greek</p>
                     <div className="flex flex-col gap-0">
-                      <p className="text-gray-600">
-                        Group Traveller - March 10, 2020
-                      </p>
+                      <p className="text-gray-600">Group Traveller - March 10, 2020</p>
                       <p className="text-yellow-500 text-lg">★★★★☆ Good</p>
                     </div>
                   </div>
@@ -307,9 +256,7 @@ export default async function PackagesPage({ params }) {
                   <div className="flex flex-col gap-2">
                     <p className="font-semibold">Phil The Greek</p>
                     <div className="flex flex-col gap-0">
-                      <p className="text-gray-600">
-                        Couple Traveller - May 18, 2019
-                      </p>
+                      <p className="text-gray-600">Couple Traveller - May 18, 2019</p>
                       <p className="text-yellow-500 text-lg">★★★★★ Excellent</p>
                     </div>
                   </div>
@@ -320,37 +267,14 @@ export default async function PackagesPage({ params }) {
         </section>
 
         <section className="flex flex-col lg:min-w-sm shrink-0 border border-gray-100 shadow-lg mx-4 lg:mx-0 lg:absolute top-0 right-0">
-          <div className="w-full py-4 bg-blue-900 text-white flex items-center justify-center text-lg">
-            Enquiry Form
-          </div>
+          <div className="w-full py-4 bg-blue-900 text-white flex items-center justify-center text-lg">Enquiry Form</div>
           <div className="w-full py-4 bg-white flex flex-col">
             <form className="grid grid-cols-1 gap-4 px-4 py-8">
-              <input
-                type="text"
-                placeholder="Full Name*"
-                className="bg-gray-100 p-4 w-full"
-                required
-              />
-              <input
-                type="email"
-                placeholder="Email*"
-                className="bg-gray-100 p-4 w-full"
-                required
-              />
-              <input
-                type="text"
-                placeholder="Subject*"
-                className="bg-gray-100 p-4 w-full"
-                required
-              />
-              <textarea
-                placeholder="Message*"
-                className="bg-gray-100 p-4 w-full h-32 resize-none"
-                required
-              ></textarea>
-              <button className="bg-blue-600 text-white font-medium w-full py-4 hover:bg-blue-700">
-                Submit Enquiry
-              </button>
+              <input type="text" placeholder="Full Name*" className="bg-gray-100 p-4 w-full" required />
+              <input type="email" placeholder="Email*" className="bg-gray-100 p-4 w-full" required />
+              <input type="text" placeholder="Subject*" className="bg-gray-100 p-4 w-full" required />
+              <textarea placeholder="Message*" className="bg-gray-100 p-4 w-full h-32 resize-none" required></textarea>
+              <button className="bg-blue-600 text-white font-medium w-full py-4 hover:bg-blue-700">Submit Enquiry</button>
             </form>
           </div>
 
