@@ -8,7 +8,7 @@ const PackageCard = ({ tour }) => {
     <div className="flex flex-col bg-white shadow-md overflow-hidden w-full mx-auto">
       {/* Image Container with Overlay */}
       <div className="relative h-80 w-full">
-        <Image src={tour?.imagePath || "/images/venezia.jpg"} alt={tour?.name} fill className="object-cover" />
+        <Image src={tour?.images?.[0] || "/images/venezia.jpg"} alt={tour?.name} fill className="object-cover" />
       </div>
 
       {/* Content Container */}

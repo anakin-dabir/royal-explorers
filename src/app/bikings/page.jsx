@@ -12,7 +12,7 @@ export default function BookingsPage() {
         <Image src="/images/venezia.jpg" alt="about-us-image" fill className="object-cover" />
         <div className="absolute bottom-0 left-0 right-0 h-full bg-black/60 text-white">
           <div className="flex mt-[114] flex-col h-full justify-center container mx-auto max-w-7xl p-4 gap-3">
-            <div className="text-5xl font-bold">Trackings</div>
+            <div className="text-5xl font-bold">Biking & Cycling</div>
           </div>
         </div>
       </section>

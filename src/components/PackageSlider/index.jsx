@@ -6,7 +6,6 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import tourPackages from "@/data/tours.json";
 import { getPackagePrice } from "@/utils/getPackagePrice";
-import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 
 const TourPackages = () => {
