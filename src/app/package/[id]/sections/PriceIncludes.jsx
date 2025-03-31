@@ -2,7 +2,7 @@ import { Check } from "lucide-react";
 import Border from "./Border";
 
 export default function PriceIncludes({ tour }) {
-  return (
+  return !tour?.inclusions ? null : (
     <>
       <div className="flex flex-col gap-2">
         <p className="font-semibold">Price Includes</p>

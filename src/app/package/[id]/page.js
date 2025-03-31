@@ -17,6 +17,7 @@ import Photos from "./sections/Photos";
 import Reviews from "./sections/Reviews";
 import Highlights from "./sections/Highlights";
 import BikesRides from "./sections/BikesRides";
+import AdditionalInformation from "./sections/AdditionalInformation";
 
 export default async function PackagesPage({ params }) {
   const { id } = await params;
@@ -35,6 +36,7 @@ export default async function PackagesPage({ params }) {
         <section className="py-10 px-6 max-w-3xl">
           <div className="flex flex-col gap-6">
             <Details tour={tour} />
+            <AdditionalInformation tour={tour} />
             <Highlights tour={tour} />
             <BikesRides tour={tour} />
             {tour.category === "tour" ? <TourPrice tour={tour} /> : <BikingPrice tour={tour} />}

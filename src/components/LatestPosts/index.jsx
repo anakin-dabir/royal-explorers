@@ -19,9 +19,13 @@ export default function LatestPosts({ packages }) {
 
                 <div className="flex flex-col gap-2">
                   <div className="font-medium">{tour.name}</div>
-                  <div className="text-gray-500">
-                    From <span className="font-medium text-blue-600">{getPackagePrice(tour)}</span>
-                  </div>
+                  {!tour?.packageCost ? (
+                    <div className="line-clamp-1 max-w-min">{tour?.details}</div>
+                  ) : (
+                    <div className="text-gray-500">
+                      From <span className="font-medium text-blue-600">{getPackagePrice(tour)}</span>
+                    </div>
+                  )}
                 </div>
               </Link>
               {index !== arr.length - 1 && <div className="border-b border-b-gray-200" />}
@@ -31,7 +35,7 @@ export default function LatestPosts({ packages }) {
       </div>
 
       <div className="text-white py-10 px-6 w-full relative">
-        <Image src="/images/venezia.jpg" className="object-cover absolute inset-0" fill />
+        <Image src="/images/venezia.jpg" alt="got-a-question" className="object-cover absolute inset-0" fill />
         <div className="absolute inset-0 z-[1] bg-blue-500/50 backdrop-blur-sm" />
         <div className="flex flex-col relative z-10">
           <h2 className="text-xl font-bold mb-2">Get a Question?</h2>

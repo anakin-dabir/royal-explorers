@@ -2,7 +2,7 @@ import Border from "./Border";
 import { MapPin } from "lucide-react";
 
 export default function Details({ tour }) {
-  return (
+  return !tour?.details ? null : (
     <>
       <div id="detail" className="scroll-mt-24 flex flex-col gap-2">
         <h2 className="text-2xl font-bold flex items-center space-x-2">

@@ -2,7 +2,7 @@ import React from "react";
 import Border from "./Border";
 
 export default function BikingPrice({ tour }) {
-  return (
+  return !tour?.packageCost ? null : (
     <>
       <div className="flex flex-col gap-2">
         <p className="font-semibold">Package Cost</p>

@@ -11,14 +11,15 @@ const links = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Tour & Travel Packages", path: "/packages/tour" },
-  { name: "Trackings", path: "/packages/trackings" },
+  { name: "Trekking", path: "/packages/trek" },
   { name: "Biking & Cycling", path: "/packages/biking" },
+  { name: "River Rafting", path: "/packages/river-rafting" },
   { name: "Contact Us", path: "/contact" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
-  const activeLink = useCallback((value) => pathname === value, [pathname]);
+  const activeLink = useCallback(value => pathname === value, [pathname]);
   const [isOpen, isOpenSet] = useState(false);
 
   return (
@@ -70,7 +71,7 @@ export default function Navbar() {
             })}
           </nav>
 
-          <button onClick={() => isOpenSet((pre) => !pre)} className="flex xl:hidden">
+          <button onClick={() => isOpenSet(pre => !pre)} className="flex xl:hidden">
             <Menu size={30} />
           </button>
 
@@ -85,7 +86,7 @@ function CollapsibleNavbar({ isOpen, isOpenSet, activeLink }) {
   const router = useRouter();
   function navigate(e, path) {
     e.preventDefault();
-    isOpenSet((pre) => !pre);
+    isOpenSet(pre => !pre);
     router.push(path);
   }
   return (
@@ -107,7 +108,7 @@ function CollapsibleNavbar({ isOpen, isOpenSet, activeLink }) {
               return (
                 <Link
                   href="#"
-                  onClick={(e) => navigate(e, link.path)}
+                  onClick={e => navigate(e, link.path)}
                   key={index}
                   className={`${active ? "border-b-2 border-blue-500" : "hover:text-blue-500 transition-colors"}`}
                 >

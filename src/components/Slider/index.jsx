@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 
-const Slider = ({ images }) => {
+const Slider = ({ images, video }) => {
   const [loaded, setLoaded] = useState(false);
 
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -19,6 +19,13 @@ const Slider = ({ images }) => {
   return (
     <div className="relative size-full">
       <div ref={sliderRef} className="keen-slider flex h-full flex-1">
+        {!video ? null : (
+          <div className="keen-slider__slide shadow-lg bg-white flex-1 size-full hover:shadow-2xl relative">
+            <video width="100%" height="100%" autoPlay loop muted playsInline>
+              <source src={video} type="video/mp4" />
+            </video>
+          </div>
+        )}
         {images?.map((image, index) => (
           <div key={index} className="keen-slider__slide flex flex-col shadow-lg bg-white flex-1 size-full hover:shadow-2xl relative">
             <div className="relative size-full">

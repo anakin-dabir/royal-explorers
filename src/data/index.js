@@ -3,7 +3,7 @@ export const data = {
     EMAIL: "ladakh60@gmail.com",
     PHONE: ["9622966260", "9419178496"],
   },
-  CATEGORIES: ["tour", "biking"],
+  CATEGORIES: ["tour", "biking", "trek", "river-rafting"],
   CATEGORIES_DATA: {
     tour: {
       heading: "Tour & Travel Packages",
@@ -11,8 +11,11 @@ export const data = {
     biking: {
       heading: "Biking & Cycling",
     },
-    trackings: {
-      heading: "Trackings",
+    trek: {
+      heading: "Trekking",
+    },
+    "river-rafting": {
+      heading: "River Rafting",
     },
   },
 };

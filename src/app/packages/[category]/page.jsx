@@ -35,7 +35,7 @@ export default async function PackagesPage({ params }) {
             </div>
           </div>
 
-          <div className="flex flex-col h-fit w-full md:w-2xl bg-white px-5 py-10 gap-4 mt-16">
+          <div className="flex flex-col h-fit w-full md:w-2xl bg-white px-5 py-10 gap-4 md:mt-16 shadow-xl">
             <div className="text-xl font-bold">Latest Tours</div>
             <LatestPosts packages={packages} />
           </div>

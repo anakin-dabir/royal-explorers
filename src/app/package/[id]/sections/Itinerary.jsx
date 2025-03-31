@@ -11,12 +11,11 @@ export default function Itinerary({ tour }) {
         </h2>
 
         <div className="flex flex-col gap-3">
-          {/* Day 1 */}
           {tour?.itinerary?.map((it, index) => {
             return (
               <div key={index} className="bg-gray-100 p-4 rounded-lg">
                 <p className="font-semibold">
-                  Day {it.day}
+                  {tour?.category === "river-rafting" ? "Option" : "Day"} {it.day}
                   {": "}
                   <a href="#" className="text-blue-600">
                     {it.title}
