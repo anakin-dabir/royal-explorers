@@ -10,9 +10,9 @@ import { data } from "@/data";
 const links = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
-  { name: "Tour & Travel Packages", path: "/packages" },
-  { name: "Trackings", path: "/trackings" },
-  { name: "Biking & Cycling", path: "/bikings" },
+  { name: "Tour & Travel Packages", path: "/packages/tour" },
+  { name: "Trackings", path: "/packages/trackings" },
+  { name: "Biking & Cycling", path: "/packages/biking" },
   { name: "Contact Us", path: "/contact" },
 ];
 

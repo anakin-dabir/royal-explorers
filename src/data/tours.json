@@ -102,7 +102,7 @@
       "Cancellation between 30 days and 20 days before the start of the tour — 50% refund",
       "Cancellation less than 20 days before the start of the tour — no refund"
     ],
-    "category": "Tour",
+    "category": "tour",
     "link": "/packages"
   },
   {
@@ -213,7 +213,7 @@
       "Cancellation between 30 days and 20 days before the start of the tour — 50% refund",
       "Cancellation less than 20 days before the start of the tour — no refund"
     ],
-    "category": "Tour",
+    "category": "tour",
     "link": "/packages"
   },
   {
@@ -333,7 +333,7 @@
       "Cancellation between 30 days and 20 days before the start of the tour — 50% refund",
       "Cancellation less than 20 days before the start of the tour — no refund"
     ],
-    "category": "Tour",
+    "category": "tour",
     "link": "/packages"
   },
   {
@@ -459,11 +459,11 @@
       "Cancellation between 30 days and 20 days to the start of the tour — 50% refund",
       "Cancellation less than 20 days to the start of the tour — no refund"
     ],
-    "category": "Tour",
+    "category": "tour",
     "link": "/packages"
   },
   {
-    "category": "Tour",
+    "category": "tour",
     "link": "/packages",
     "slug": "majestic-ladakh-expedition",
     "name": "Majestic Ladakh Expedition",
@@ -596,7 +596,7 @@
   {
     "slug": "ladakh-ultimate-biking-adventure",
     "link": "/bikings",
-    "category": "Biking",
+    "category": "biking",
     "name": "Ladakh Ultimate Biking Adventure",
     "details": "Experience the thrill of riding through the rugged terrains of Ladakh on this 6-night, 7-day biking expedition. Conquer the world's highest motorable roads, witness breathtaking landscapes, and explore the rich culture of this Himalayan paradise.",
     "highlights": [

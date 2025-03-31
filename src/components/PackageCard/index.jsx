@@ -53,7 +53,7 @@ const PackageCard = ({ tour }) => {
             <span className="text-gray-600 text-sm">(6 Reviews)</span>
           </div> */}
           <Link
-            href={`${tour?.link}/${tour?.slug}`}
+            href={`/package/${tour?.slug}`}
             className="bg-blue-500 min-w-[130px] shrink-0 flex hover:bg-blue-600 text-white px-4 py-2 rounded transition duration-300 uppercase text-sm"
           >
             View Details

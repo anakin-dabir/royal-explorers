@@ -19,7 +19,7 @@ const Slider = ({ images }) => {
   return (
     <div className="relative size-full">
       <div ref={sliderRef} className="keen-slider flex h-full flex-1">
-        {images.map((image, index) => (
+        {images?.map((image, index) => (
           <div key={index} className="keen-slider__slide flex flex-col shadow-lg bg-white flex-1 size-full hover:shadow-2xl relative">
             <div className="relative size-full">
               <Image src={image ?? "/images/venezia.jpg"} alt={`${index}-slider-image`} fill className="object-cover" />
