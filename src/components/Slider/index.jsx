@@ -31,14 +31,14 @@ const Slider = ({ images }) => {
       {loaded && instanceRef.current && (
         <>
           <button
-            onClick={e => e.stopPropagation() || instanceRef.current?.prev()}
+            onClick={e => e.stopPropagation() || (images?.length && instanceRef.current?.prev())}
             className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg z-10 transition-all duration-300 hover:scale-110"
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
 
           <button
-            onClick={e => e.stopPropagation() || instanceRef.current?.next()}
+            onClick={e => e.stopPropagation() || (images?.length && instanceRef.current?.next())}
             className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg z-10 transition-all duration-300 hover:scale-110"
           >
             <ChevronRight className="h-6 w-6" />

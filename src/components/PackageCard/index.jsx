@@ -2,13 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { Clock, Calendar, MapPin, Film, Star, Utensils, Bed } from "lucide-react";
 import { getPackagePrice } from "@/utils/getPackagePrice";
+import Slider from "@/components/Slider";
 
 const PackageCard = ({ tour }) => {
   return (
     <div className="flex flex-col bg-white shadow-md overflow-hidden w-full mx-auto">
       {/* Image Container with Overlay */}
       <div className="relative h-80 w-full">
-        <Image src={tour?.images?.[0] || "/images/venezia.jpg"} alt={tour?.name} fill className="object-cover" />
+        <Slider images={tour.images} />
       </div>
 
       {/* Content Container */}

@@ -7,7 +7,7 @@ import React from "react";
 import LatestPosts from "@/components/LatestPosts";
 
 export default async function PackagesPage({ params }) {
-  const { category } = params;
+  const { category } = await params;
   if (!data.CATEGORIES.includes(category)) notFound();
   const packages = tours.filter(tour => tour.category === category);
   const pageData = data.CATEGORIES_DATA[category];
