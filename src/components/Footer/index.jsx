@@ -2,31 +2,39 @@ import { data } from "@/data";
 import { Facebook, Twitter, Linkedin } from "lucide-react";
 import places from "@/data/popular-destinations.json";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="bg-footer text-white">
       <div className="container mx-auto max-w-7xl px-4 py-10 flex flex-col md:flex-row items-start justify-between gap-8">
         {/* Left Section */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col xl:flex-row gap-4 xl:gap-8">
           <div className="flex flex-col gap-2">
             <h2 className="text-xl font-semibold text-white flex items-center gap-2 uppercase">
               <span className="text-blue-500">Royal</span> Explorers
             </h2>
-            <p className="text-sm">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <p className="text-sm md:max-w-sm">
+              Royal Explorers is the first women-led tour operator in Ladakh, offering authentic cultural experiences, trekking adventures, and sustainable
+              tourism across Leh Ladakh, Jammu & Kashmir. Founded in 1995 by Lobzang Tsendol & Kunzes Angmo, we are pioneers in empowering women in the travel
+              industry. Experience Ladakh through our expert-guided, immersive, and unforgettable journeys!
+            </p>
           </div>
 
-          <div className="flex items-center gap-4">
-            {places?.map((place, index) => {
-              return (
-                <div key={index} className="size-20 relative">
-                  <Image alt={place.region} src={place.image} fill className="object-cover" />
-                  <div className="absolute inset-0 z-10 flex bg-black/60 items-center text-center p-1 justify-center">
-                    <div className="text-xs font-bold">{place.region}</div>
-                  </div>
-                </div>
-              );
-            })}
+          <div className="flex flex-col gap-2">
+            <h3 className="text-lg font-semibold text-white">Top Destinations</h3>
+            <div className="flex items-center gap-4">
+              {places?.map((place, index) => {
+                return (
+                  <Link href="/packages/tour" key={index} className="size-20 relative">
+                    <Image alt={place.region} src={place.image} fill className="object-cover" />
+                    <div className="absolute inset-0 z-10 flex bg-black/60 items-center text-center p-1 justify-center">
+                      <div className="text-xs font-bold">{place.region}</div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
 

@@ -37,7 +37,10 @@ const PopularDestinations = () => {
               </div>
               <div className="flex justify-between items-center">
                 {/* <span>{destination.tours} tours</span> */}
-                <Link href="/tours" className="bg-blue-600 text-xs px-2 py-1 rounded uppercase lg:group-hover:opacity-100 lg:opacity-0  transition-opacity">
+                <Link
+                  href="/packages/tour"
+                  className="bg-blue-600 text-xs px-2 py-1 rounded uppercase lg:group-hover:opacity-100 lg:opacity-0  transition-opacity"
+                >
                   View all tours
                 </Link>
               </div>

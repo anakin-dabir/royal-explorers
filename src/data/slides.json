@@ -6,7 +6,7 @@
     "subHeading": "7 Days in Leh Ladakh",
     "description": "Ride the Himalayas - Conquer Ladakh, Embrace the Adventure",
     "buttonText": "LEARN MORE",
-    "link": "/packages"
+    "link": "/packages/biking"
   },
   {
     "image": "/images/banner-2.jpg",
@@ -14,7 +14,7 @@
     "preHeading": "Open Your Eyes to",
     "heading": "The Paradise of Heaven",
     "buttonText": "LEARN MORE",
-    "link": "/packages"
+    "link": "/packages/tour"
   },
   {
     "image": "/images/banner-3.jpg",
@@ -23,6 +23,6 @@
     "postHeading": "Vacation",
     "description": "Leh, Ladakh,Jammu & Kashmir",
     "buttonText": "LEARN MORE",
-    "link": "/packages"
+    "link": "/packages/tour"
   }
 ]
