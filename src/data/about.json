@@ -1,0 +1,90 @@
+{
+  "companyName": "Royal Explorers",
+  "tagline": "Pioneering Women-Led Travel in Ladakh",
+  "founding": {
+    "year": 1995,
+    "yearsInBusiness": "20+ years",
+    "location": "Leh, Ladakh, Jammu & Kashmir, India",
+    "distinction": "First women-led tour operator in Ladakh"
+  },
+  "mission": {
+    "statement": "A Legacy of Empowerment and Excellence",
+    "description": "As the first women-operated tour company in Ladakh, we break barriers by providing opportunities for women in a traditionally male-dominated industry.",
+    "approach": "Our team's deep connection to Ladakh's land, culture, and people ensures authentic and sensitive travel experiences."
+  },
+  "founders": [
+    {
+      "name": "Lobzang Tsendol",
+      "role": "Co-founder",
+      "description": "Visionary leader who helped pioneer women entrepreneurship in Ladakh."
+    },
+    {
+      "name": "Kunzes Angmo",
+      "role": "Co-founder",
+      "description": "Trailblazer who empowered women in Ladakh's tourism and hospitality sectors."
+    }
+  ],
+  "achievements": {
+    "company": [
+      "Shaped Royal Explorers into a leading Ladakh travel company",
+      "Featured in the French guidebook Le Routard for tour authenticity",
+      "Facilitated Ladakh Tourism Day 2024, promoting sustainable tourism"
+    ],
+    "socialImpact": [
+      "Paved the way for women in Ladakh's tourism leadership",
+      "Created employment opportunities for local women",
+      "Preserved and promoted Ladakhi cultural heritage"
+    ]
+  },
+  "tours": {
+    "focus": "Cultural and Heritage Experiences",
+    "philosophy": "Travel is about deep connection - not just sightseeing",
+    "offerings": [
+      {
+        "type": "Cultural Immersion",
+        "activities": ["Buddhist monastery visits", "Ancient palace explorations", "Authentic village homestays"]
+      },
+      {
+        "type": "Adventure & Nature",
+        "activities": ["High-altitude treks", "Sustainable wildlife tours", "Traditional craft workshops"]
+      }
+    ]
+  },
+  "recognition": [
+    {
+      "type": "International",
+      "description": "Featured in Le Routard guidebook",
+      "significance": "Recognized for authentic Ladakhi travel experiences"
+    },
+    {
+      "type": "Government",
+      "description": "Ladakh Tourism Day 2024",
+      "role": "Official facilitators",
+      "significance": "Showcased sustainable tourism practices"
+    }
+  ],
+
+  "whyChooseUs": [
+    {
+      "category": "Pioneers in Women-Led Travel",
+      "details": "As the first women-operated tour company in Ladakh, we bring a unique perspective to tourism and have been empowering women in the industry for over two decades"
+    },
+    {
+      "category": "Expertise in Ladakh",
+      "details": "Our deep local knowledge ensures that every tour is a journey of discovery—whether you're learning about Ladakh's culture, history, or trekking its stunning landscapes"
+    },
+    {
+      "category": "Global Recognition",
+      "details": "Acknowledged by Le Routard and recognized as a key player in Ladakh's tourism industry, our reputation for excellence is well-established"
+    },
+    {
+      "category": "Sustainable and Responsible Tourism",
+      "details": "We strive to preserve the natural beauty of Ladakh and contribute positively to its local communities through ethical and sustainable travel practices"
+    }
+  ],
+  "invitation": {
+    "title": "Join Us for an Unforgettable Experience",
+    "message": "At Royal Explorers, we invite you to experience Ladakh like never before—through the eyes of passionate women guides who are deeply connected to the land, its people, and its culture",
+    "promise": "Whether you're here to explore Ladakh's heritage, immerse yourself in its spiritual heart, or embark on an adventure of a lifetime, we promise you'll leave with memories that last forever"
+  }
+}

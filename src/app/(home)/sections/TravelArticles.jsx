@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Lightbulb, Clock } from "lucide-react";
+import blogs from "@/data/blog.json";
 
 const articlesData = [
   {
@@ -38,18 +39,18 @@ const TravelArticles = () => {
         <Lightbulb className="text-blue-500 mr-2" />
         <h2 className="text-2xl font-medium text-gray-800">Travel Articles</h2>
         <span className="mx-2 text-gray-400">/</span>
-        <Link href="/articles" className="text-blue-500 hover:underline">
+        <Link href="/blogs" className="text-blue-500 hover:underline">
           Read All Articles
         </Link>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {articlesData.map((article) => (
-          <div key={article.id} className="group">
+        {blogs.map((blog, index) => (
+          <Link href={`/blogs/${blog.slug}`} key={index} className="group">
             <div className="relative h-64 overflow-hidden group">
               <Image
-                src={article.image}
-                alt={article.title || "Travel image"}
+                src={blog?.images?.[0]}
+                alt={blog.title || "Travel image"}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -58,17 +59,15 @@ const TravelArticles = () => {
                 className="lg:group-hover:opacity-100 lg:opacity-0 transition-opacity absolute inset-0 bg-gradient-to-t from-black/70
                 to-transparent flex flex-col justify-end p-4 gap-4"
               >
-                <h3 className="text-white font-medium text-lg leading-tight">
-                  {article.title}
-                </h3>
+                <h3 className="text-white font-medium text-lg leading-tight">{blog.title}</h3>
 
-                <div className="flex items-center gap-2 text-white/80 text-sm">
+                {/* <div className="flex items-center gap-2 text-white/80 text-sm">
                   <Clock size={14} />
                   <span>{article.date}</span>
-                </div>
+                </div> */}
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

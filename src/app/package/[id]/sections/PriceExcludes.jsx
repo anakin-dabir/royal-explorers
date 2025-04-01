@@ -1,5 +1,5 @@
 import { X } from "lucide-react";
-import Border from "./Border";
+import Border from "../../../../components/Border";
 
 export default function PriceExcludes({ tour }) {
   return tour?.exclusions ? (

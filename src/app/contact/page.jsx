@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { Mail, MapPin, Phone, Facebook, Twitter, Linkedin } from "lucide-react";
 import Link from "next/link";
+import { data } from "@/data";
 
 export default function ContactUsPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <div className="w-full h-[400px] flex relative overflow-hidden">
-        <Image src="/images/venezia.jpg" alt="about-us-image" fill className="object-cover" />
+        <Image src="/biking/biking-1-7.jpg" alt="about-us-image" fill className="object-cover" />
         <div className="absolute bottom-0 left-0 right-0 h-full bg-black/60 text-white">
           <div className="flex mt-[114] flex-col h-full justify-center container mx-auto max-w-7xl p-4 gap-6">
             <div className="text-5xl font-bold">Contact Us</div>
@@ -35,14 +36,18 @@ export default function ContactUsPage() {
             <h3 className="text-xl font-bold text-gray-900 mb-4">Location</h3>
             <div className="flex flex-col gap-4">
               <p className="text-gray-600 flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-blue-600 shrink-0" /> 4 Apt, Flawing Street, The Grand Avenue, Liverpool, UK 33342
+                <MapPin className="w-5 h-5 text-blue-600 shrink-0" /> {data.NAVBAR.ADDRESS}
               </p>
               <p className="text-gray-600 flex items-center gap-3">
-                <Mail className="w-5 h-5 text-blue-600" /> contact@infinitewptheme.com
+                <Mail className="w-5 h-5 text-blue-600" /> {data.NAVBAR.EMAIL}
               </p>
-              <p className="text-gray-600 flex items-center gap-3">
-                <Phone className="w-5 h-5 text-blue-600" /> +1-3524-3356
-              </p>
+              {data.NAVBAR.PHONE?.map((phone, index) => {
+                return (
+                  <p key={index} className="text-gray-600 flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-blue-600" /> {phone}
+                  </p>
+                );
+              })}
             </div>
           </div>
         </div>

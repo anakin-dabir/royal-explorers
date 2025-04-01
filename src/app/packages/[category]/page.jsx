@@ -9,13 +9,13 @@ import LatestPosts from "@/components/LatestPosts";
 export default async function PackagesPage({ params }) {
   const { category } = await params;
   if (!data.CATEGORIES.includes(category)) notFound();
-  const packages = tours.filter(tour => tour.category === category);
+  const packages = tours.filter((tour) => tour.category === category);
   const pageData = data.CATEGORIES_DATA[category];
 
   return (
     <div className="flex flex-col min-h-screen">
       <section className="w-full h-[400px] flex relative overflow-hidden">
-        <Image src="/images/venezia.jpg" alt="about-us-image" fill className="object-cover" />
+        <Image src="/the-ultimate-ladakh-adventure/7.jpeg" alt="about-us-image" fill className="object-cover" />
         <div className="absolute bottom-0 left-0 right-0 h-full bg-black/60 text-white">
           <div className="flex mt-[114] flex-col h-full justify-center container mx-auto max-w-7xl p-4 gap-3">
             <div className="text-5xl font-bold">{pageData.heading}</div>

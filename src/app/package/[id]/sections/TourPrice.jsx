@@ -1,4 +1,4 @@
-import Border from "./Border";
+import Border from "../../../../components/Border";
 import React from "react";
 
 export default function TourPrice({ tour }) {

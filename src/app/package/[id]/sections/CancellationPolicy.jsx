@@ -1,7 +1,7 @@
-import Border from "./Border";
+import Border from "../../../../components/Border";
 
 export default function CancellationPolicy({ tour }) {
-  return !tour.cancellationPolicy ? null : (
+  return !tour?.cancellationPolicy ? null : (
     <>
       <div className="flex flex-col gap-2">
         <p className="font-semibold">Cancellation Policy</p>

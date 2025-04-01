@@ -1,5 +1,5 @@
 import React from "react";
-import Border from "./Border";
+import Border from "@/components/Border";
 import { Check, MapPin } from "lucide-react";
 
 export default function AdditionalInformation({ tour }) {

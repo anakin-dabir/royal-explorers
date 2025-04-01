@@ -1,8 +1,8 @@
-import Border from "./Border";
+import Border from "../../../../components/Border";
 import React from "react";
 
 export default function Highlights({ tour }) {
-  return !tour.highlights ? null : (
+  return !tour?.highlights ? null : (
     <>
       <div className="flex flex-col gap-2">
         <p className="font-semibold">Highlights</p>

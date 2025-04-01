@@ -1,6 +1,6 @@
 import Slider from "@/components/Slider";
 import { Camera } from "lucide-react";
-import Border from "./Border";
+import Border from "../../../../components/Border";
 
 export default function Photos({ tour }) {
   return (

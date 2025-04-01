@@ -18,15 +18,17 @@ import Reviews from "./sections/Reviews";
 import Highlights from "./sections/Highlights";
 import BikesRides from "./sections/BikesRides";
 import AdditionalInformation from "./sections/AdditionalInformation";
+import { notFound } from "next/navigation";
 
 export default async function PackagesPage({ params }) {
   const { id } = await params;
-  const tour = data.find(data => data.slug === id);
+  const tour = data.find((data) => data.slug === id);
+  if (!tour) notFound();
 
   return (
     <div className="flex flex-col min-h-screen">
       <section className="w-full h-[400px] flex relative overflow-hidden">
-        <Image src="/images/venezia.jpg" alt="about-us-image" fill className="object-cover" />
+        <Image src={tour?.images?.[0]} alt="about-us-image" fill className="object-cover" />
         <Heading tour={tour} />
       </section>
       <Duration tour={tour} />
@@ -39,7 +41,7 @@ export default async function PackagesPage({ params }) {
             <AdditionalInformation tour={tour} />
             <Highlights tour={tour} />
             <BikesRides tour={tour} />
-            {tour.category === "tour" ? <TourPrice tour={tour} /> : <BikingPrice tour={tour} />}
+            {tour?.category === "tour" ? <TourPrice tour={tour} /> : <BikingPrice tour={tour} />}
             <PriceIncludes tour={tour} />
             <PriceExcludes tour={tour} />
             <BookingPolicy tour={tour} />

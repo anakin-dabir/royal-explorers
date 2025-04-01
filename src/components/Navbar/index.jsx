@@ -10,11 +10,12 @@ import { data } from "@/data";
 const links = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
-  { name: "Tour & Travel Packages", path: "/packages/tour" },
+  { name: "Tour & Travel", path: "/packages/tour" },
   { name: "Trekking", path: "/packages/trek" },
   { name: "Biking & Cycling", path: "/packages/biking" },
   { name: "River Rafting", path: "/packages/river-rafting" },
   { name: "Contact Us", path: "/contact" },
+  { name: "Blog", path: "/blogs" },
 ];
 
 export default function Navbar() {
@@ -54,12 +55,12 @@ export default function Navbar() {
         </div>
 
         <div className="flex flex-row justify-between items-center">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <Plane className="size-5 text-blue-500" />
             <span className="text-xl font-bold uppercase">
               <span className="text-blue-500">Royal</span> Explorers
             </span>
-          </div>
+          </Link>
           <nav className="hidden xl:flex items-center justify-end gap-8">
             {links.map((link, index) => {
               const active = activeLink(link.path);

@@ -1,5 +1,5 @@
 import React from "react";
-import Border from "./Border";
+import Border from "@/components/Border";
 
 export default function BikesRides({ tour }) {
   return !tour?.bikesAndRiders ? null : (

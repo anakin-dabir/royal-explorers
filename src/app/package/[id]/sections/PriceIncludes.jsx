@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import Border from "./Border";
+import Border from "../../../../components/Border";
 
 export default function PriceIncludes({ tour }) {
   return !tour?.inclusions ? null : (

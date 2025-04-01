@@ -1,5 +1,4 @@
-"use client";
-
+import { data } from "@/data";
 import { Facebook, Twitter, Linkedin } from "lucide-react";
 
 export default function Footer() {
@@ -15,11 +14,18 @@ export default function Footer() {
         </div>
 
         {/* Right Section */}
-        <div>
+        <div className="md:max-w-sm">
           <h3 className="text-lg font-semibold text-white">Contact Info</h3>
-          <p className="mt-4 text-sm">Address: 12 Main Street Pt. London</p>
-          <p className="mt-2 text-sm">Phone: +44 3656 4567</p>
-          <p className="mt-2 text-sm">contact@traveltourtheme.com</p>
+          <p className="mt-4 text-sm">Address: {data.NAVBAR.ADDRESS}</p>
+          {data.NAVBAR.PHONE.map((phone, index) => {
+            return (
+              <p className="mt-2 text-sm" key={index}>
+                Phone {index + 1}: {phone}
+              </p>
+            );
+          })}
+
+          <p className="mt-2 text-sm">{data.NAVBAR.EMAIL}</p>
           <div className="mt-4 flex gap-4">
             <Facebook className="w-5 h-5 text-gray-400 hover:text-white" />
             <Twitter className="w-5 h-5 text-gray-400 hover:text-white" />
@@ -29,7 +35,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className="text-center py-8 text-sm bg-footer-dark text-white/80">COPYRIGHT 2025 ROYALEXPLORERS, ALL RIGHTS RESERVED</div>
+      <div className="text-center py-8 text-sm bg-footer-dark text-white/80">COPYRIGHT 2025 ROYAL EXPLORERS, ALL RIGHTS RESERVED</div>
     </footer>
   );
 }

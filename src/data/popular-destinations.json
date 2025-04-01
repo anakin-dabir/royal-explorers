@@ -1,0 +1,22 @@
+[
+    {
+        "region": "Leh City",
+        "image": "/places/Leh City.jpeg"
+    },
+    {
+        "region": "Nubra Valley",
+        "image": "/places/Nubra Valley.jpeg"
+    },
+    {
+        "region": "Pangong Lake",
+        "image": "/places/Pangong Lake.jpeg"
+    },
+    {
+        "region": "Leh Palace",
+        "image": "/places/Leh Palace.jpeg"
+    },
+    {
+        "region": "Shanti Stupa",
+        "image": "/places/Shanti Stupa.jpg"
+    }
+]

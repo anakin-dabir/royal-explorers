@@ -1,4 +1,4 @@
-import Border from "./Border";
+import Border from "../../../../components/Border";
 import { MapPin } from "lucide-react";
 
 export default function Details({ tour }) {
