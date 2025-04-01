@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Briefcase, DollarSign, Users, Award, Venus, ChartNoAxesCombined, Earth, Flower, Clock, LocateIcon, MapPin, Calendar1, Ribbon } from "lucide-react";
 import data from "@/data/about.json";
 import React from "react";
+import Link from "next/link";
 
 export default function AboutUsPage() {
   return (
@@ -149,13 +150,15 @@ export default function AboutUsPage() {
       </section>
 
       <section className="relative w-full h-96 flex items-center overflow-hidden">
-        <Image src="/places/Leh City.jpeg" alt="ad-image" fill className="object-cover" />
+        <Image src="/places/Shanti Stupa.jpg" alt="ad-image" fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-orange-300/50 to-blue-500/50 backdrop-blur-xs">
           <div className="gap-4 container max-w-7xl mx-auto py-20 px-4 flex flex-col">
             <div className="text-3xl font-bold text-white">{data?.invitation?.title}</div>
             <div className="text-gray-100">{data?.invitation?.message}</div>
             <div className="border-l-4 border-l-blue-600 text-lg text-white max-w-2xl pl-4 py-2">{data?.invitation?.promise}</div>
-            <button className="w-fit bg-white text-blue-600 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300">Contact Us</button>
+            <Link href="/contact" className="w-fit bg-white text-blue-600 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300">
+              Contact Us
+            </Link>
           </div>
         </div>
       </section>
