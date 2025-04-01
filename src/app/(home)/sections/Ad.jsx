@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Ad() {
   return (
@@ -14,9 +15,9 @@ export default function Ad() {
               Ladakh's first women-led travel operator!
             </p>
 
-            <button className="bg-white w-fit text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition-colors">
+            <Link href="/packages/tour" className="bg-white w-fit text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition-colors">
               See Promotion Tours
-            </button>
+            </Link>
           </div>
         </div>
       </div>
