@@ -19,10 +19,15 @@ import Highlights from "./sections/Highlights";
 import BikesRides from "./sections/BikesRides";
 import AdditionalInformation from "./sections/AdditionalInformation";
 import { notFound } from "next/navigation";
+import { data as staticData } from "@/data";
+
+export async function generateStaticParams() {
+  return staticData.PACKAGES.map((pkg) => ({ slug: pkg }));
+}
 
 export default async function PackagesPage({ params }) {
-  const { id } = await params;
-  const tour = data.find((data) => data.slug === id);
+  const { slug } = await params;
+  const tour = data.find((data) => data.slug === slug);
   if (!tour) notFound();
 
   return (

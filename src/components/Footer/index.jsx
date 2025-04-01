@@ -23,7 +23,7 @@ export default function Footer() {
 
           <div className="flex flex-col gap-2">
             <h3 className="text-lg font-semibold text-white">Top Destinations</h3>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               {places?.map((place, index) => {
                 return (
                   <Link href="/packages/tour" key={index} className="size-20 relative">

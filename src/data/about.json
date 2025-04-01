@@ -16,12 +16,14 @@
     {
       "name": "Lobzang Tsendol",
       "role": "Co-founder",
-      "description": "Visionary leader who helped pioneer women entrepreneurship in Ladakh."
+      "description": "Visionary leader who helped pioneer women entrepreneurship in Ladakh.",
+      "image": "/director/lobzang.jpeg"
     },
     {
       "name": "Kunzes Angmo",
       "role": "Co-founder",
-      "description": "Trailblazer who empowered women in Ladakh's tourism and hospitality sectors."
+      "description": "Trailblazer who empowered women in Ladakh's tourism and hospitality sectors.",
+      "image": "/director/kunzes.jpeg"
     }
   ],
   "achievements": {

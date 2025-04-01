@@ -6,6 +6,10 @@ import { notFound } from "next/navigation";
 import React from "react";
 import LatestPosts from "@/components/LatestPosts";
 
+export async function generateStaticParams() {
+  return data.CATEGORIES.map((category) => ({ category }));
+}
+
 export default async function PackagesPage({ params }) {
   const { category } = await params;
   if (!data.CATEGORIES.includes(category)) notFound();

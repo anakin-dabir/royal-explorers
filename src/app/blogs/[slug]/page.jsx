@@ -4,6 +4,11 @@ import blogs from "@/data/blog.json";
 import React from "react";
 import { notFound } from "next/navigation";
 import Border from "@/components/Border";
+import { data } from "@/data";
+
+export async function generateStaticParams() {
+  return data.BLOGS.map((blog) => ({ slug: blog }));
+}
 
 export default async function PackagesPage({ params }) {
   const { slug } = await params;
