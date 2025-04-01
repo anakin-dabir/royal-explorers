@@ -3,6 +3,7 @@ import "./globals.css";
 import "keen-slider/keen-slider.min.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Tawkto from "@/components/Tawkto";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning className={`${inter.variable} antialiased`}>
         <Navbar />
         {children}
+        <Tawkto />
         <Footer />
       </body>
     </html>
