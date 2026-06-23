@@ -1,8 +1,9 @@
 export const data = {
   NAVBAR: {
-    EMAIL: "ladakh60@gmail.com",
+    EMAIL: "royal_leh@yahoo.com",
     PHONE: ["9622966260", "9419178496"],
     ADDRESS: "Royal Explorers, LBA Youth complex, Ginpa Soma, Main market, Leh Ladakh, 194101",
+    CALL_BUTTON_PHONE: "+919622966260",
   },
   CATEGORIES: ["tour", "biking", "trek", "river-rafting"],
   PACKAGES: [

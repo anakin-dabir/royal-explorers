@@ -4,6 +4,7 @@ import "keen-slider/keen-slider.min.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Tawkto from "@/components/Tawkto";
+import CallButton from "@/components/CallButton";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Tawkto />
+        <CallButton />
         <Footer />
       </body>
     </html>
