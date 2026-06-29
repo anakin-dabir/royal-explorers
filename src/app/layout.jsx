@@ -4,6 +4,7 @@ import "keen-slider/keen-slider.min.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Tawkto from "@/components/Tawkto";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import CallButton from "@/components/CallButton";
 
 const inter = Inter({
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html suppressHydrationWarning lang="en">
       <body suppressHydrationWarning className={`${inter.variable} antialiased`}>
+        <GoogleAnalytics />
         <Navbar />
         {children}
         <Tawkto />
